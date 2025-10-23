@@ -16,7 +16,7 @@ class Solution:
                 right_list.append(None)
                 return
             right_list.append(node.val)
-            rec_right(node.right)
+            rec_right(node.right)  
             rec_right(node.left)
         
         rec_left(root.left)

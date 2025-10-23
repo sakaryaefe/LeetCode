@@ -1,18 +1,17 @@
 class Solution:
     def longestCommonPrefix(self, strs: List[str]) -> str:
         prefix = strs[0]
-        n = len(prefix)
 
-        for word in strs[1:]:
-            while not word.startswith(prefix):
+        for i in strs[1:]:
+            while not i.startswith(prefix):
                 prefix = prefix[:-1]
-                if word.startswith(prefix):
-                    for word in strs[2:]:
-                        while not word.startswith(prefix):
-                            prefix = prefix[:-1]
             if not prefix:
                 return ""
-        return prefix
+                for i in strs[2:]:
+                    while not i.startswith(prefix):
+                        prefix = prefix[:-1]
+        
+        return prefix 
 
 """
 first word and second word comparison: if there is not a relation between the first two return "" straight 
